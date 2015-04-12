@@ -1,0 +1,14 @@
+{
+  "name": "cerad/jwt",
+  "license": "MIT",
+  "type": "project",
+  "description": "JWT - Json Web Token Component",
+  "autoload": 
+  {
+    "psr-4": { "Cerad\\Component\\": "src/" }
+  },
+  "require": 
+  {
+    "php": ">=5.4.19"
+  }
+}
