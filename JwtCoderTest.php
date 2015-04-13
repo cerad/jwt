@@ -4,7 +4,7 @@ namespace Cerad\Component\Jwt;
 
 use Cerad\Component\Jwt\JwtCoder;
 
-require __DIR__  . '/../../vendor/autoload.php';
+//require __DIR__  . '/../../vendor/autoload.php';
 
 class JwtCoderTest extends \PHPUnit_Framework_TestCase
 {

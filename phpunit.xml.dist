@@ -5,10 +5,11 @@
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
          backupGlobals="false"
          colors="true"
+         bootstrap="vendor/autoload.php"
 >
   <testsuites>
     <testsuite name="Json Web Token Test Suite">
-      <directory>src/Jwt/JwtCoderTest.php</directory>
+      <directory>JwtCoderTest.php</directory>
     </testsuite>
   </testsuites>
 </phpunit>

@@ -3,10 +3,7 @@
   "license": "MIT",
   "type": "project",
   "description": "JWT - Json Web Token Component",
-  "autoload": 
-  {
-    "psr-4": { "Cerad\\Component\\": "src/" }
-  },
+  "autoload": { "psr-4": { "Cerad\\Component\\Jwt\\": "" }},
   "require": 
   {
   }
