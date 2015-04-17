@@ -22,4 +22,4 @@ Returned payload as an array instead of a class.
     $this->assertEquals($decoded['message'], 'abc');
 ```
 
-composer required cerad/jwt
+composer require cerad/jwt
