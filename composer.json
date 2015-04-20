@@ -1,10 +1,13 @@
 {
   "name": "cerad/jwt",
-  "license": "MIT",
   "type": "project",
-  "description": "JWT - Json Web Token Component",
+  "description": "Cerad JWT - Json Web Token Component",
+  "homepage": "http://zayso.org",
+  "authors": [{ "name": "Art Hundiak", "email": "ahundiak@gmail.com" }],
+  "license": "MIT",
   "autoload": { "psr-4": { "Cerad\\Component\\Jwt\\": "" }},
   "require": 
   {
+    "php": ">=5.5.5"
   }
 }
