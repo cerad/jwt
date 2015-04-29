@@ -2,9 +2,8 @@
 
 namespace Cerad\Component\Jwt;
 
-use Cerad\Component\Jwt\JwtCoder;
+//  Cerad\Component\Jwt\JwtCoder;
 
-//require __DIR__  . '/../../vendor/autoload.php';
 
 class JwtCoderTest extends \PHPUnit_Framework_TestCase
 {
@@ -34,6 +33,6 @@ class JwtCoderTest extends \PHPUnit_Framework_TestCase
         "exp" => time() + 20); // time in the future
       $encoded = $jwt->encode($payload);
       $this->setExpectedException('UnexpectedValueException');
-      $decoded = $jwt->decode($encoded, 'my_key2');
+      $jwt->decode($encoded, 'my_key2');
     }
 }

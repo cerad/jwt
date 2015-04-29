@@ -3,7 +3,7 @@
 namespace Cerad\Component\Jwt;
 
 /**
- * NOTE: This was copied and conveerted to an instance
+ * NOTE: This was copied and converted to an instance
  * docs are not updated
  * 
  * JSON Web Token implementation, based on this spec:
@@ -43,8 +43,8 @@ class JwtCoder
    * @param bool        $verify    Don't skip verification process
    *
    * @return object      The JWT's payload as a PHP object
-   * @throws UnexpectedValueException Provided JWT was invalid
-   * @throws DomainException          Algorithm was not provided
+   * @throws \UnexpectedValueException Provided JWT was invalid
+   * @throws \DomainException          Algorithm was not provided
    * 
    * @uses jsonDecode
    * @uses urlsafeB64Decode
@@ -67,7 +67,7 @@ class JwtCoder
     }
     $sig = $this->urlsafeB64Decode($cryptob64);
     
-    if (!$verify) return payload;
+    if (!$verify) return $payload;
     
     if (empty($header['alg'])) {
       throw new \DomainException('Empty algorithm');
@@ -119,8 +119,8 @@ class JwtCoder
    * @param string $method       The signing algorithm. Supported algorithms
    *                               are 'HS256', 'HS384', 'HS512' and 'RS256'
    *
-   * @return string          An encrypted message
-   * @throws DomainException Unsupported algorithm was specified
+   * @return string           An encrypted message
+   * @throws \DomainException Unsupported algorithm was specified
    */
   protected function sign($msg, $key, $method = 'HS256')
   {
@@ -141,17 +141,18 @@ class JwtCoder
         }
         return $signature;
     }
+    return ''; // Should not get here
   }
 
   /**
    * Verify a signature with the mesage, key and method. Not all methods
    * are symmetric, so we must have a separate verify and sign method.
-   * @param string $msg the original message
-   * @param string $signature
-   * @param string|resource $key for HS*, a string key works. for RS*, must be a resource of an openssl public key
-   * @param string $method
-   * @return bool
-   * @throws DomainException Invalid Algorithm or OpenSSL failure
+   * @param   string $msg the original message
+   * @param   string $signature
+   * @param   string|resource $key for HS*, a string key works. for RS*, must be a resource of an openssl public key
+   * @param   string $method
+   * @return  bool
+   * @throws \DomainException Invalid Algorithm or OpenSSL failure
    */
   protected function verifySignature($msg, $signature, $key, $method = 'HS256') 
   {
@@ -178,8 +179,8 @@ class JwtCoder
    *
    * @param string $input JSON string
    *
-   * @return object          Object representation of JSON string
-   * @throws DomainException Provided string was invalid JSON
+   * @return  object          Object representation of JSON string
+   * @throws \DomainException Provided string was invalid JSON
    */
   public function jsonDecode($input)
   {
@@ -213,8 +214,8 @@ class JwtCoder
    *
    * @param object|array $input A PHP object or array
    *
-   * @return string          JSON representation of the PHP object or array
-   * @throws DomainException Provided object could not be encoded to valid JSON
+   * @return  string          JSON representation of the PHP object or array
+   * @throws \DomainException Provided object could not be encoded to valid JSON
    */
   public function jsonEncode($input)
   {
