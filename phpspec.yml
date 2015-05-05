@@ -1,0 +1,6 @@
+suites:
+  suite1:
+    namespace:   Cerad\Component\Jwt
+    psr4_prefix: Cerad\Component\Jwt
+    src_path:    .
+    spec_path:   .
